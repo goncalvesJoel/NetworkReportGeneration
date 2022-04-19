@@ -1,5 +1,7 @@
 # ProjetoReports
-Neste projeto pretende-se implementar módulos estatísticos e comunicação em formato PDF.
+In this project we intend to implement statistical modules and communication in PDF format.
+
+Project folder
 
 # What to install?
 install python3
