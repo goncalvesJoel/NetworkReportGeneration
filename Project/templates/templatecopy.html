@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>My Report</title>
+</head>
+
+<body>
+    <!-- ============= HEADER ============= -->
+    <article id="top">
+        <section>
+            <img src="{{assets_dir}}/Group10933.png" alt="" /> 
+        </section>
+        <div class="top-text">
+            <div class="text">
+                <div class="textp">
+                    <p class="text_bold">{{MONTH_NAME}}</p>
+                    <p>{{HEADER_TITLE_ONE}}</p>
+                    <p>{{HEADER_TITLE_TWO}}</p>
+                </div>
+            </div>
+            <div class="date">
+                <div class="textp">
+                    <p class="text_bold"><span class="icon-monthCalendar"></span></p>
+                    <p>{{DATES1}}</p>
+                    <p>{{DATES2}}</p>
+                </div>
+            </div>
+            <div class="city">
+                <div class="textp">
+                    <p class="text_bold"><span class="icon-mapPin"></span></p>
+                    <p class="text_bold">{{CITY}}</p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- ============= BANNER_0 ============= -->
+    <article id="banner-zero" style="background-image: url('{{LINK_BANNER1}}');">
+        <section id="container">
+            <div class="title text_bold ">{{FIRST_BANNER_TITLE}}</div>
+            <div class="text">{{FIRST_BANNER_CONTENT}}</div>
+        </section>
+    </article>
+
+    <!-- ============= STATISTIC ============= -->
+    <article id="statistic">
+        <div class="user">
+            <div class="icon">
+                <p><span class="icon-handPointingUp"></span></p>
+            </div>
+            <div class="text">
+                <p class="text_bold">{{REPORT_USER}} <br /> {{REPORT_ACTIONS}}</p>
+            </div>
+            <div class="value text_bold">
+                <p>{{value_user_actions}}</p>
+            </div>
+            <div class="title">
+                <p class="text_bold">{{unity_user_actions}}</p>
+            </div>
+
+            <div class="espace"></div>
+        </div>
+
+
+        <div class="photo-content">
+            <div class="icon">
+                <p><span class="icon-camera"></span></p>
+            </div>
+            <div class="text">
+                <p class="text_bold">{{REPORT_PHOTOGIFs}} <br /> {{REPORT_SENT}}</p>
+            </div>
+            <div class="value text_bold">
+                <p>{{value_photos_gifs_sent}}</p>
+            </div>
+            <div class="title">
+                <p class="text_bold">{{unity_photos_gifs_sent}}</p>
+            </div>
+        </div>
+
+        <div class="photo-content">
+            <div class="icon">
+                <p><span class="icon-showInput"></span></p>
+            </div>
+            <div class="text">
+                <p class="text_bold">{{REPORT_CONTENT}} <br />{{REPORT_DISPLAY}}</p>
+            </div>
+            <div class="value text_bold">
+                <p>{{value_number_views}}</p>
+            </div>
+            <div class="title">
+                <p class="text_bold">{{unity_number_views}}</p>
+            </div>
+        </div>
+
+        <!-- ======= STATISTIC == Grafics====== -->
+        <!-- ======= MODULES ====== -->
+        <div id="container">
+            <div id="modules">
+                <div class="mod-title text_bold">{{REPORT_MODULES}}</div>
+                <img src="{{assets_dir}}/Modules_Graphic.svg" alt="" />
+            </div>
+            <div class="module-statistic">
+                <div class="value-modules">
+                    {% for SIZE in range(SIZE_MODULES) %}
+                    <p>
+                        <div class="{{MODULES_TEXT_COLOR[SIZE]}}"></div>
+                        <div class="{{MODULES_TEXT_BOLD[SIZE]}}">{{MODULES_VALUE[SIZE]}}% {{MODULES_WORD[SIZE]}}</div>
+                    </p>
+                    {% endfor %}
+                </div>
+                <!-- ======= ACTIONS ====== -->
+                <div class="graphics"><img src="{{assets_dir}}/Actions_Locals.svg" alt="" /></div>
+                <div class="legend_graphics">
+                    {% for SIZE in range(SIZE_ACTIONS) %}                     
+                    <p>
+                        <div class="{{ACTIONS_TEXT_COLOR[SIZE]}}"></div>
+                        <div class="{{ACTIONS_TEXT_BOLD[SIZE]}}">{{ACTIONS_VALUE[SIZE]}}% {{ACTIONS_LANG[SIZE]}}</div>
+                    </p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- ============= BANNER-1 ============= -->
+    <article id="banner-one" style="background-image: url('{{LINK_BANNER2}}');">
+        <section id="container">
+            <div class="text">
+                {{SECOND_BANNER}}
+            </div>
+        </section>
+    </article>
+
+    <!-- ============= SEPARATION POINTS ============= -->
+    <article id="separator-title">
+        <div class="listing"></div>
+        <div class="title">
+            {{REPORT_TOP_CONTENT_CATEGORIES}}
+        </div>
+        <div id="module-icon">
+            <div class="icon">
+                <div class="icon-style">
+                    <span class="icon-handPointingUp"></span>
+                </div>
+            </div>
+            <div class="table">
+                <ul>
+                    <li class="title">{{REPORT_USER_ACTIONS}}</li>
+                    <li class="text">{{REPORT_Main_categories_Module}}</li>
+                </ul>
+            </div>
+        </div>
+    </article>
+    <!-- ============= TABLE ============= -->
+    <article id="table-search">
+        <table id="customers">
+            <tr class="cor-th">
+                <th class="text_bold">
+                    <div class="alignment">
+                        <span class="icon-news"></span>
+                        <span class="color_text_table">{{REPORT_NEWS}}</span>
+                    </div>
+                </th>
+                <th class="text_bold">
+                    <div class="alignment">
+                        <span class="icon-events"></span>
+                        <span class="color_text_table">{{REPORT_EVENTS}}</span>
+                    </div>
+                </th>
+                <th class="text_bold">
+                    <div class="alignment">
+                        <span class="icon-mesaSocial_diretorio"></span>
+                        <span class="color_text_table">{{REPORT_SEARCH}}</span>
+                    </div>
+                </th>
+                <th class="text_bold">
+                    <div class="alignment">
+                        <span class="icon-transports"></span>
+                        <span class="color_text_table">{{REPORT_TRANSPORTS}}</span>
+                    </div>
+                </th>
+            </tr>
+            <!-- Table items New -->
+            {% for row in ITEMS_TABLE %}
+            <tr class="{{row.color}}">
+                {% for cell in row.columns %}
+                <td>{{cell}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </article>
+
+    <!-- ============= SEPARATION POINTS ++ DURING THE MONTH ++ ============= -->
+    <article id="separator-title">
+        <div class="listing"></div>
+        <div class="title">
+            {{REPORT_DURING_THE_MONTH}}
+        </div>
+        <div id="module-icon">
+            <div class="icon">
+                <div class="icon-style">
+                    <span class="icon-handPointingUp"></span>
+                </div>
+            </div>
+            <div class="table">
+                <ul>
+                    <li class="title">{{REPORT_USER_ACTIONS}}</li>
+                    <li class="text">{{REPORT_Monthly_User_Actions_Evolution}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="module-icon">
+            <div class="icon-two">
+                <div class="icon-style ">
+                    <span class="icon-mesaSocial_goOut"></span>
+                </div>
+            </div>
+            <div class="table">
+                <ul>
+                    <li class="title"> {{REPORT_PEDESTRIANS}}</li>
+                    <li class="text">{{REPORT_Monthly_Pedestrians_Evolution}}</li>
+                </ul>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- ============= GRAPHIC ++ DURING THE MONTH ++ ============= -->
+    <article id="graphic">
+        <div class="container_graphic">
+            <img src="{{assets_dir}}/During_Month.svg" alt="" />
+        </div>
+
+        <div class="text-graphic">
+            <p>{{TEXT_DURING}}</p>
+        </div>
+    </article>
+    <!--=======================================================================-->
+    <!-- ============= SEPARATION POINTS ============= -->
+    <article id="separator-title">
+        <div class="listing"></div>
+        <div class="title">
+            {{REPORT_WEEKLY_TREND}}
+        </div>
+        <div id="module-icon">
+            <div class="icon">
+                <div class="icon-style">
+                    <span class="icon-handPointingUp"></span>
+                </div>
+            </div>
+            <div class="table">
+                <ul>
+                    <li class="title">{{REPORT_USER_ACTIONS}}</li>
+                    <li class="text">{{REPORT_Weekly_Evolution_User_Actions}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="module-icon">
+            <div class="icon-two">
+                <div class="icon-style ">
+                    <span class="icon-mesaSocial_goOut"></span>
+                </div>
+            </div>
+            <div class="table">
+                <ul>
+                    <li class="title">{{REPORT_PEDESTRIANS}}</li>
+                    <li class="text">{{REPORT_Weekly_Pedestrian_Evolution}}</li>
+                </ul>
+            </div>
+
+        </div>
+    </article>
+
+
+    <!-- ============= GRAPHIC ++ Weekly trend ++============= -->
+    <article id="graphic">
+        <div class="container_graphic">
+            <!-- <img src="{{assets_dir}}/grafico01.png" alt="" /> -->
+            <img src="{{assets_dir}}/Weekly_Trend_TwoLine.svg" alt="" />
+        </div>
+
+        <div class="text-graphic">
+            <p>{{TEXT_WEEK}}</p>
+        </div>
+    </article>
+    <!--=======================================================================-->
+    <!-- ============= SEPARATION POINTS ============= -->
+    <article id="separator-title">
+        <div class="listing"></div>
+        <div class="title">
+            {{REPORT_DAILY_TREND}}
+        </div>
+        <div id="module-icon">
+            <div class="icon">
+                <div class="icon-style">
+                    <span class="icon-handPointingUp"></span>
+                </div>
+            </div>
+            <div class="table">
+                <ul>
+                    <li class="title">{{REPORT_USER_ACTIONS}}</li>
+                    <li class="text">{{REPORT_Average_User_Actions_Count_Week_Day}}</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div id="module-icon">
+            <div class="icon-two">
+                <div class="icon-style ">
+                    <span class="icon-mesaSocial_goOut"></span>
+                </div>
+            </div>
+            <div class="table">
+                <ul>
+                    <li class="title">{{REPORT_PEDESTRIANS}}</li>
+                    <li class="text">{{REPORT_Average_Pedestrians_Count_Week_Day}}</li>
+                </ul>
+            </div>
+
+        </div>
+    </article>
+
+
+    <!-- ============= GRAPHIC ++ DAILY TREND ++============= -->
+    <article id="graphic">
+        <div class="container_graphic_daily">
+            <img src="{{assets_dir}}/Daily_Trend.svg" alt="" />
+        </div>
+        <div class="text-graphic ">
+            <p>{{TEXT_DAILY}}</p>
+        </div>
+    </article>
+
+    <!--=======================================================================-->
+    <!-- ============= SEPARATION POINTS ============= -->
+    <article id="separator-title">
+        <div class="listing"></div>
+        <div class="title">
+            {{REPORT_THE_PODIUM}}
+        </div>
+        <div id="module-icon">
+            <div class="icon">
+                <div class="icon-style">
+                    <span class="icon-handPointingUp"></span>
+                </div>
+            </div>
+            <div class="table">
+                <ul>
+                    <li class="title">{{REPORT_USER_ACTIONS}}</li>
+                    <li class="text">{{REPORT_TOMI_With_Most_User_Actions}}</li>
+                </ul>
+            </div>
+
+        </div>
+        <div id="module-icon">
+            <div class="icon">
+                <div class="icon-style">
+                    <span class="icon-camera"></span>
+                </div>
+            </div>
+            <div class="table">
+                <ul>
+                    <li class="title">{{REPORT_PHOTOS_GIFS_SENT}}</li>
+                    <li class="text">{{REPORT_TOMI_With_Most_Selfie_GIFs_Sent}}</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </article>
+
+
+    <!-- ============= CONTENTs ============= -->
+    <div class="contents-uni">
+        <article id="contents">
+            <div class="title text_bold"> {{REPORT_ACTIONS}} {{REPORT_CHAMPION}}</div>
+            <div class="contents-icon">
+                <div class="contents-img">
+                    <img src="{{assets_dir}}/post_tomi.svg" alt="" /></div>
+                <div class="contents-name">{{PODIUM_ACTIONS_LOCATION}}</div>
+                <div class="contents-value text_bold">{{PODIUM_ACTIONS_VALUE}}</div>
+                <div class="contents-title">{{REPORT_USER_ACTIONS}}</div>
+            </div>
+        </article>
+
+        <article id="contents">
+            <div class="title text_bold"> {{REPORT_SELFIE_WINNER}}</div>
+            <div class="contents-icon">
+                <div class="contents-img">
+                    <img src="{{assets_dir}}/post_tomi.svg" alt="" /></div>
+                <div class="contents-name">{{PODIUM_SELFIES_LOCATION}}</div>
+                <div class="contents-value text_bold">{{PODIUM_SELFIES_VALUE}}</div>
+                <div class="contents-title">{{REPORT_PHOTOS_GIFS_SENT}}</div>
+            </div>
+        </article>
+    </div>
+
+    <!--=======================================================================-->
+    <!-- ============= SEPARATION POINTS ============= -->
+    <article id="separator-title">
+        <div class="listing"></div>
+        <div class="title">
+            {{REPORT_HEATMAP}}
+        </div>
+        <div id="module-icon">
+            <div class="icon-two">
+                <div class="icon-style ">
+                    <span class="icon-mesaSocial_goOut"></span>
+                </div>
+            </div>
+            <div class="table">
+                <ul>
+                    <li class="title">{{REPORT_PEDESTRIANS}}</li>
+                    <li class="text">{{REPORT_Average_Pedestrians_Counted_TOMI}}</li>
+                </ul>
+            </div>
+        </div>
+    </article>
+
+    <!-- ============= GRAPHIC ============= -->
+    <article id="graphic-map">
+        <!-- <img src="{{assets_dir}}/grafico01.png" alt="" /> -->
+        <img src="{{assets_dir}}/grafico04.png" alt="" />
+        <div class="text-graphic-map">
+            <div class="text_bold">{{HEATMAP_TITLE}}</div>
+            <br/>
+            <div>{{HEATMAP_DESCRIPTION}}</div>
+            <div class="text-graphic-map-mini">{{HEATMAP_COMMENTS}}</div>
+        </div>
+    </article>
+
+    <!--=======================================================================-->
+    <!-- ============= BANNER-2 title+text+img============= -->
+    <article id="banner-two">
+        <div class="banner-title text_bold">
+            <img src="{{assets_dir}}/Group 1093.png" alt="" /> {{SMART_MEDIA_TITLE}}
+        </div>
+        <div class="banner-content">
+            <div class="text">{{SMART_DESCRIPTION}} </div>
+
+            <div class="container-banner-img">
+                {% for SIZE in range(SMART_SIZE) %}
+                <div class="img">
+                    <img class="size-one" src="{{SMART_IMGS[SIZE]}}" alt="" />
+                    <img class="size-two" src="{{assets_dir}}/Group10933.png" alt="" />
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+
+    <!--=======================================================================-->
+    <!-- ============= BUTTON ============ -->
+    <article id="button">
+        <button class="button text_bold">{{REPORT_SUBSCRIBE_NEWSLETTER}}</button>
+    </article>
+
+    <!--=======================================================================-->
+    <!-- ============= FOOTER ============ -->
+    <article id="footer-img">
+        <div class="text text_bold">Trademark. Patented internationally. Registered design.</div>
+        <img class="size-two" src="{{assets_dir}}/footer.png" alt="" />
+    </article>
+
+
+</body>
+
+</html>
